@@ -6,6 +6,8 @@ const FEATURED_REPOS = [
   "Travelrecommendation",
   "mvp-painting-site-website",
   "oakland-macomb-landing",
+  "expressBookReviews",
+  "e-plantShopping",
 ];
 
 // Background images for featured projects (add screenshots to images folder)
@@ -24,6 +26,8 @@ const CUSTOM_HOMEPAGES = {
   "oakland-macomb-landing": "https://ilovechanel.github.io/oakland-macomb-landing/",
   "gitportfolio": "https://ilovechanel.github.io/gitportfolio/",
   "giftlink-project": "https://ilovechanel.github.io/giftlink-project/",
+  "expressBookReviews": "https://ilovechanel.github.io/expressBookReviews/",
+  "e-plantShopping": "https://ilovechanel.github.io/e-plantShopping/",
 };
 
 // Repos to EXCLUDE from your portfolio
