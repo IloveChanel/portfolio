@@ -295,7 +295,7 @@ if (shareBtn) {
     const shareData = {
       title: "Michelle Vance | Developer Portfolio",
       text: "Check out Michelle Vance's developer portfolio - Web Developer with AI & automation skills",
-      url: window.location.href
+      url: "https://ilovechanel.github.io/gitportfolio/"
     };
 
     try {
@@ -325,7 +325,7 @@ if (shareBtn) {
 const copyLinkBtn = document.getElementById("copyLinkBtn");
 if (copyLinkBtn) {
   copyLinkBtn.addEventListener("click", async () => {
-    const portfolioUrl = window.location.href;
+    const portfolioUrl = "https://ilovechanel.github.io/gitportfolio/";
     
     try {
       await navigator.clipboard.writeText(portfolioUrl);
