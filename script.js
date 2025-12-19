@@ -16,6 +16,13 @@ const PROJECT_IMAGES = {
   "oakland-macomb-landing": "images/oakland-macomb.jpg",
 };
 
+// Custom homepage URLs (Live Demo links)
+const CUSTOM_HOMEPAGES = {
+  "michelle-portfolio-website": "https://www.michelletrendsetter.com",
+  "Travelrecommendation": "https://ilovechanel.github.io/Travelrecommendation/",
+  "mvp-painting-site-website": "https://mvp-painting-site-website.vercel.app",
+};
+
 // Repos to EXCLUDE from your portfolio
 const EXCLUDED_REPOS = [
   "visual-voicemail-app",
@@ -97,7 +104,9 @@ function projectCard(repo) {
   const topics = (repo.topics || []).slice(0, 4).map(t => `<span class="badge">#${escapeHtml(t)}</span>`).join("");
 
   const repoUrl = repo.html_url;
-  const liveUrl = repo.homepage && repo.homepage.startsWith("http") ? repo.homepage : "";
+  // Use custom homepage URL if available, otherwise use repo.homepage
+  const customHomepage = CUSTOM_HOMEPAGES[repo.name];
+  const liveUrl = customHomepage || (repo.homepage && repo.homepage.startsWith("http") ? repo.homepage : "");
   const shareUrl = liveUrl || repoUrl;
   
   const likes = getLikes(repo.name);
