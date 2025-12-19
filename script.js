@@ -135,7 +135,7 @@ function projectCard(repo) {
       data-topics="${(repo.topics || []).join(" ").toLowerCase()}"
       data-repo-name="${escapeHtml(repo.name)}"
       ${bgStyle}>
-      <div class="project-content">
+      <div>
         <h3>${name}</h3>
         <p>${desc}</p>
       </div>
@@ -158,8 +158,6 @@ function projectCard(repo) {
     </article>
   `;
 }
-
-function rankRepos(repos) {
   const featuredSet = new Set(FEATURED_REPOS.map(r => r.toLowerCase()));
   const excludedSet = new Set(EXCLUDED_REPOS.map(r => r.toLowerCase()));
 
