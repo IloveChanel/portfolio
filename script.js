@@ -20,8 +20,10 @@ const PROJECT_IMAGES = {
 const CUSTOM_HOMEPAGES = {
   "michelle-portfolio-website": "https://www.michelletrendsetter.com",
   "Travelrecommendation": "https://ilovechanel.github.io/Travelrecommendation/",
-  "mvp-painting-site-website": "https://mvp-painting-site-website.vercel.app",
+  "mvp-painting-site-website": "https://ilovechanel.github.io/mvp-painting-site-website/",
   "oakland-macomb-landing": "https://ilovechanel.github.io/oakland-macomb-landing/",
+  "gitportfolio": "https://ilovechanel.github.io/gitportfolio/",
+  "giftlink-project": "https://ilovechanel.github.io/giftlink-project/",
 };
 
 // Repos to EXCLUDE from your portfolio
