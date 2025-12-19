@@ -11,7 +11,7 @@ const FEATURED_REPOS = [
 // Background images for featured projects (add screenshots to images folder)
 const PROJECT_IMAGES = {
   "michelle-portfolio-website": "images/michelle_trendsetter.png",
-  "Travelrecommendation": "images/Tavel_recommendation.png",
+  "Travelrecommendation": "images/Travel_recommendation.png",
   "mvp-painting-site-website": "images/mvp-painting.jpg",
   "oakland-macomb-landing": "images/oakland_macomb_landing.png",
 };
@@ -26,11 +26,6 @@ const CUSTOM_HOMEPAGES = {
   "giftlink-project": "https://ilovechanel.github.io/giftlink-project/",
   "expressBookReviews": "https://ilovechanel.github.io/expressBookReviews/",
   "e-plantShopping": "https://ilovechanel.github.io/e-plantShopping/",
-  "tax-calculator-cicd-pipeline": "https://ilovechanel.github.io/tax-calculator-cicd-pipeline/",
-  "vftvk-Simple-Interest-Calculator": "https://ilovechanel.github.io/vftvk-Simple-Interest-Calculator/",
-  "dealer_evaluation_backend": "https://ilovechanel.github.io/dealer_evaluation_backend/",
-  "LogisticsShippingRates": "https://ilovechanel.github.io/LogisticsShippingRates/",
-  "trendsetter-travel-website": "https://ilovechanel.github.io/trendsetter-travel-website/",
 };
 
 // Repos to EXCLUDE from your portfolio
@@ -73,16 +68,6 @@ const statusEl = document.getElementById("status");
 const searchEl = document.getElementById("search");
 const filterEl = document.getElementById("filter");
 const refreshBtn = document.getElementById("refresh");
-const loadMoreBtn = document.getElementById("loadMoreBtn");
-const backToTopBtn = document.getElementById("backToTop");
-
-let isMobile = window.innerWidth <= 768;
-let visibleProjectCount = isMobile ? 6 : 999; // Show 6 on mobile, all on desktop
-let allRenderedProjects = [];
-
-window.addEventListener('resize', () => {
-  isMobile = window.innerWidth <= 768;
-});
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -152,7 +137,8 @@ function projectCard(repo) {
       ${bgStyle}>
       <div>
         <h3>${name}</h3>
-        <p>${desc}</p>
+        <p class="project-desc" data-full="${desc}">${desc}</p>
+        <button class="btn-expand">Show more</button>
       </div>
       <div class="meta">
         ${lang}
@@ -231,7 +217,6 @@ function renderRepos(repos) {
   projectsGrid.innerHTML = "";
   if (!repos.length) {
     projectsGrid.innerHTML = `<div class="card">No repos found. Make sure your repos are public.</div>`;
-    loadMoreBtn.classList.add('hidden');
     return;
   }
 
@@ -246,33 +231,7 @@ function renderRepos(repos) {
   }).join("");
 
   projectsGrid.innerHTML = html;
-  allRenderedProjects = Array.from(projectsGrid.querySelectorAll(".project"));
-  
-  // Apply mobile load more if on mobile
-  if (isMobile && allRenderedProjects.length > visibleProjectCount) {
-    updateVisibleProjects();
-  } else {
-    loadMoreBtn.classList.add('hidden');
-  }
-  
   applyUIFilters();
-}
-
-function updateVisibleProjects() {
-  allRenderedProjects.forEach((project, index) => {
-    if (index < visibleProjectCount) {
-      project.style.display = '';
-    } else {
-      project.style.display = 'none';
-    }
-  });
-  
-  if (visibleProjectCount >= allRenderedProjects.length) {
-    loadMoreBtn.classList.add('hidden');
-  } else {
-    loadMoreBtn.classList.remove('hidden');
-    loadMoreBtn.textContent = `Load More Projects (${allRenderedProjects.length - visibleProjectCount} remaining)`;
-  }
 }
 
 async function fetchRepos({ force = false } = {}) {
@@ -360,6 +319,27 @@ refreshBtn.addEventListener("click", async () => {
     setStatus("Refreshed from GitHub.");
   } catch {
     setStatus("Refresh failed. Try again in a minute.");
+  }
+});
+
+// Expand/collapse project descriptions
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".btn-expand")) {
+    const btn = e.target.closest(".btn-expand");
+    const desc = btn.previousElementSibling;
+    const isExpanded = btn.getAttribute("data-expanded") === "true";
+    
+    if (isExpanded) {
+      desc.style.display = "-webkit-box";
+      desc.classList.remove("expanded");
+      btn.textContent = "Show more";
+      btn.setAttribute("data-expanded", "false");
+    } else {
+      desc.style.display = "block";
+      desc.classList.add("expanded");
+      btn.textContent = "Show less";
+      btn.setAttribute("data-expanded", "true");
+    }
   }
 });
 
@@ -469,48 +449,62 @@ document.addEventListener("click", async (e) => {
   }
 });
 
-// Email button fallback - show emails if mailto doesn't work
-const emailBtn = document.getElementById("emailBtn");
-if (emailBtn) {
-  emailBtn.addEventListener("click", function(e) {
-    // Copy emails to clipboard as backup
-    const emails = "michelletrendsetters@gmail.com, sellitrealestate@yahoo.com";
-    navigator.clipboard.writeText(emails).then(() => {
-      // Show confirmation
-      alert("✅ Emails copied to clipboard!\n\n📧 michelletrendsetters@gmail.com\n📧 sellitrealestate@yahoo.com\n\nYou can paste them into your email app.");
-    }).catch(() => {
-      // If clipboard fails, show the emails
-      alert("📧 Contact emails:\n\nmichelletrendsetters@gmail.com\nsellitrealestate@yahoo.com");
-    });
+// Floating contact form functionality
+const floatingContactToggle = document.getElementById("floatingContactToggle");
+const floatingContactMini = document.getElementById("floatingContactMini");
+const floatingContactForm = document.getElementById("floatingContactForm");
+
+if (floatingContactToggle && floatingContactMini) {
+  floatingContactToggle.addEventListener("click", () => {
+    floatingContactMini.classList.toggle("open");
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".floating-contact-pill") && !e.target.closest(".floating-contact-mini")) {
+      floatingContactMini.classList.remove("open");
+    }
+  });
+}
+
+if (floatingContactForm) {
+  floatingContactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("fcName").value.trim();
+    const email = document.getElementById("fcEmail").value.trim();
+    const message = document.getElementById("fcMessage").value.trim();
+    const portfolioUrl = "https://ilovechanel.github.io/gitportfolio/";
+
+    // Using Formspree to send email
+    try {
+      const response = await fetch("https://formspree.io/f/mwvevpba", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message,
+          portfolio_url: portfolioUrl,
+        }),
+      });
+
+      if (response.ok) {
+        alert("Thank you for reaching out! 💜 I'll get back to you soon!");
+        floatingContactMini.classList.remove("open");
+        floatingContactForm.reset();
+      } else {
+        alert("There was an issue sending your message. Please try again.");
+      }
+    } catch (error) {
+      alert("There was an error. Please try again or email me directly.");
+      console.error("Error:", error);
+    }
   });
 }
 
 // Initialize the portfolio
 init();
 
-// Load More Button
-if (loadMoreBtn) {
-  loadMoreBtn.addEventListener('click', () => {
-    visibleProjectCount += 6;
-    updateVisibleProjects();
-    applyUIFilters();
-  });
-}
-
-// Back to Top Button
-if (backToTopBtn) {
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-      backToTopBtn.classList.add('show');
-    } else {
-      backToTopBtn.classList.remove('show');
-    }
-  });
-
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-}

@@ -177,24 +177,6 @@ input[type="search"]::placeholder{color:rgba(170,182,204,.7)}
 }
 .project h3{margin:0; font-size:16px; letter-spacing:.1px}
 .project p{margin:0; color:var(--muted); font-size:14px; min-height: 42px}
-.project-desc{
-  color:var(--muted); font-size:14px; margin:0;
-}
-.btn-expand{
-  display: none;
-  background: none;
-  border: none;
-  color: var(--accent);
-  font-size: 12px;
-  padding: 0;
-  cursor: pointer;
-  font-weight: 600;
-  margin-top: 4px;
-}
-.btn-expand:hover{
-  text-decoration: underline;
-  opacity: 0.8;
-}
 .meta{display:flex; gap:10px; flex-wrap:wrap; font-size:12px; color:var(--muted)}
 .badge{
   border:1px solid rgba(29,36,51,.9);
@@ -430,64 +412,25 @@ input[type="search"]::placeholder{color:rgba(170,182,204,.7)}
   .grid{grid-template-columns: repeat(2, 1fr)}
 }
 @media (max-width: 620px){
-  .grid{grid-template-columns: repeat(2, 1fr); gap:6px}
+  .grid{grid-template-columns: repeat(2, 1fr); gap:10px}
   .nav{display:none}
   .project{
-    min-height: 100px;
-    padding: 8px;
-    gap: 5px;
+    min-height: 140px;
+    padding: 12px;
+    gap: 8px;
   }
   .project > div:first-child {
-    padding: 5px;
+    padding: 8px;
   }
-  .project h3{font-size: 12px; margin-bottom: 1px}
-  .project-desc{
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    font-size: 10px;
-    min-height: 14px;
-  }
-  .project-desc.expanded{
-    display: block;
-    -webkit-line-clamp: unset;
-    overflow: visible;
-  }
-  .btn-expand{
-    display: inline;
-    font-size: 10px;
-    margin-top: 2px;
-  }
-  .meta{font-size: 9px; gap: 4px; margin-top: 3px}
-  .badge{padding: 2px 4px; font-size: 9px}
-  .project .actions{gap: 4px; margin-top: 5px}
-  .project .actions a{font-size: 10px; padding: 4px 6px}
-  .section{padding: 20px 0}
-  .section h2{font-size: 18px; margin-bottom: 10px}
-  .hero h1{font-size: 26px; line-height: 1.1; margin-bottom: 10px}
-  .lead{font-size: 13px; margin-bottom: 12px}
-  .hero-actions{gap: 6px; margin-bottom: 10px}
-  .btn{padding: 8px 10px; font-size: 13px; border-radius: 12px}
-  .btn-small{padding: 6px 8px; font-size: 12px}
-  
-  /* Floating contact button - reduce size on mobile */
-  .floating-contact-pill {
-    bottom: 12px;
-    right: 12px;
-    padding: 12px 16px;
-    gap: 12px;
-  }
-  
-  .pill-contact-btn {
-    font-size: 14px;
-    padding: 12px 24px;
-  }
-  
-  .floating-contact-mini {
-    bottom: 90px;
-    right: 12px;
-    width: 240px;
-  }
+  .project h3{font-size: 14px}
+  .project p{font-size: 12px; min-height: 32px}
+  .meta{font-size: 11px}
+  .badge{padding: 3px 6px; font-size: 11px}
+  .project .actions a{font-size: 12px; padding: 6px 10px}
+  .section{padding: 28px 0}
+  .section h2{font-size: 20px}
+  .hero h1{font-size: 28px; line-height: 1.1}
+  .lead{font-size: 14px}
+  .hero-actions{gap: 8px}
+  .btn{padding: 9px 12px; font-size: 14px}
 }
-
