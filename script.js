@@ -158,6 +158,8 @@ function projectCard(repo) {
     </article>
   `;
 }
+
+function rankRepos(repos) {
   const featuredSet = new Set(FEATURED_REPOS.map(r => r.toLowerCase()));
   const excludedSet = new Set(EXCLUDED_REPOS.map(r => r.toLowerCase()));
 
