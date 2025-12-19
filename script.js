@@ -18,6 +18,7 @@ const CUSTOM_DESCRIPTIONS = {
   "gitportfolio": "Auto-updating developer portfolio that dynamically loads GitHub projects with search, filtering, and social sharing features. Built with vanilla JavaScript and GitHub API.",
   "gift-management-app": "Full-stack containerized gift management application with React frontend and Node.js backend. Deployed on Kubernetes and IBM Code Engine with MongoDB database, JWT authentication, and automated CI/CD.",
   "shipping-rate-calculator": "Shipping rate calculation tool with Git CLI practice. Includes shell scripts for logistics calculations, contribution guidelines, and Apache 2.0 license.",
+  "tax-calculator": "Tax calculator web app with complete CI/CD pipeline using Tekton. Deployed on IBM Cloud Code Engine with Docker, Nginx, automated testing (Jasmine), and 6-stage deployment workflow.",
 };
 
 const projectsGrid = document.getElementById("projectsGrid");
