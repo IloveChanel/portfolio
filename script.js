@@ -21,6 +21,7 @@ const CUSTOM_HOMEPAGES = {
   "michelle-portfolio-website": "https://www.michelletrendsetter.com",
   "Travelrecommendation": "https://ilovechanel.github.io/Travelrecommendation/",
   "mvp-painting-site-website": "https://mvp-painting-site-website.vercel.app",
+  "oakland-macomb-landing": "https://ilovechanel.github.io/oakland-macomb-landing/",
 };
 
 // Repos to EXCLUDE from your portfolio
