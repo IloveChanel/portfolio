@@ -16,6 +16,7 @@ const EXCLUDED_REPOS = [
 const CUSTOM_DESCRIPTIONS = {
   "mvp-painting-site-website": "3-page travel website featuring company information, team profiles, and searchable exotic destinations (beaches, temples, cities). Built with dynamic search functionality and JSON API integration.",
   "gitportfolio": "Auto-updating developer portfolio that dynamically loads GitHub projects with search, filtering, and social sharing features. Built with vanilla JavaScript and GitHub API.",
+  "gift-management-app": "Full-stack containerized gift management application with React frontend and Node.js backend. Deployed on Kubernetes and IBM Code Engine with MongoDB database, JWT authentication, and automated CI/CD.",
 };
 
 const projectsGrid = document.getElementById("projectsGrid");
