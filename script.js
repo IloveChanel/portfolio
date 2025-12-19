@@ -22,6 +22,7 @@ const CUSTOM_DESCRIPTIONS = {
   "book-review-api": "Node.js book review API with Express.js. Forked from IBM Developer Skills Network for final module project. Features RESTful endpoints, Apache 2.0 licensed.",
   "portfolio-website": "HTML/CSS/JavaScript portfolio website with modern design, interactive elements, and responsive layout. Includes project showcase and professional presentation.",
   "dealer-evaluation-backend": "Backend API for dealer evaluation system. Node.js/Express backend with database integration for managing dealer ratings, reviews, and analytics.",
+  "embedded-ai-project": "Embedded AI final project with HTML templates and static assets. Forked from IBM Developer Skills Network, Apache 2.0 licensed. Features AI/ML integration for web applications.",
 };
 
 const projectsGrid = document.getElementById("projectsGrid");
