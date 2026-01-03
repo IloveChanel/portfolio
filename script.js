@@ -23,9 +23,10 @@ const CUSTOM_HOMEPAGES = {
   "mvp-painting-site-website": "https://ilovechanel.github.io/mvp-painting-site-website/",
   "oakland-macomb-landing": "https://ilovechanel.github.io/oakland-macomb-landing/",
   "gitportfolio": "https://ilovechanel.github.io/gitportfolio/",
-  "giftlink-project": "https://ilovechanel.github.io/giftlink-project/",
   "expressBookReviews": "https://ilovechanel.github.io/expressBookReviews/",
   "e-plantShopping": "https://ilovechanel.github.io/e-plantShopping/",
+  "Michelle_wholesale_Wine": "https://ilovechanel.github.io/Michelle_wholesale_Wine/",
+  "towingcompay": "https://ilovechanel.github.io/towingcompay/",
 };
 
 // Repos to EXCLUDE from your portfolio
@@ -37,6 +38,10 @@ const EXCLUDED_REPOS = [
   "michelle-portfolio-main",
   "michelle-vance-portfolio",
   "astro-platform-starter",
+  "wholesalewine1",
+  "wholesalewine12",
+  "wholesale_wine",
+  "woods-wholesale-wine-",
 ];
 
 // Custom descriptions for repos (fallback if GitHub description is empty)
@@ -61,6 +66,8 @@ const CUSTOM_DESCRIPTIONS = {
   "astro-platform-starter": "Modern Astro.js starter with Tailwind CSS and Netlify Core Primitives (Edge Functions, Image CDN, Blob Store). Ready for deployment with one-click Netlify button.",
   "vftvk-Simple-Interest-Calculator": "Simple interest calculator web app with HTML, CSS, and JavaScript. Forked from IBM Developer Skills Network. Apache 2.0 licensed coding project template.",
   "porfolio": "Portfolio placeholder repository. Empty repo for future portfolio development.",
+  "towingcompay": "Professional towing company website with service information, contact forms, and responsive design.",
+  "Michelle_wholesale_Wine": "E-commerce wine marketplace featuring product catalog, shopping cart, and professional design for wholesale wine distribution.",
 };
 
 const projectsGrid = document.getElementById("projectsGrid");
