@@ -27,6 +27,7 @@ const CUSTOM_HOMEPAGES = {
   "e-plantShopping": "https://ilovechanel.github.io/e-plantShopping/",
   "Michelle_wholesale_Wine": "https://ilovechanel.github.io/Michelle_wholesale_Wine/",
   "towingcompay": "https://ilovechanel.github.io/towingcompay/",
+  "Trendsetter_law": "https://ilovechanel.github.io/Trendsetter_law/",
 };
 
 // Repos to EXCLUDE from your portfolio
@@ -68,6 +69,7 @@ const CUSTOM_DESCRIPTIONS = {
   "porfolio": "Portfolio placeholder repository. Empty repo for future portfolio development.",
   "towingcompay": "Professional towing company website with service information, contact forms, and responsive design.",
   "Michelle_wholesale_Wine": "E-commerce wine marketplace featuring product catalog, shopping cart, and professional design for wholesale wine distribution.",
+  "Trendsetter_law": "Professional law firm website with service information, attorney profiles, and client resources.",
 };
 
 const projectsGrid = document.getElementById("projectsGrid");
