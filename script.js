@@ -28,6 +28,7 @@ const CUSTOM_HOMEPAGES = {
   "Michelle_wholesale_Wine": "https://ilovechanel.github.io/Michelle_wholesale_Wine/",
   "towingcompay": "https://ilovechanel.github.io/towingcompay/",
   "Trendsetter_law": "https://ilovechanel.github.io/Trendsetter_law/",
+  "Family_Medicine": "https://ilovechanel.github.io/Family_Medicine/",
 };
 
 // Repos to EXCLUDE from your portfolio
@@ -70,6 +71,7 @@ const CUSTOM_DESCRIPTIONS = {
   "towingcompay": "Professional towing company website with service information, contact forms, and responsive design.",
   "Michelle_wholesale_Wine": "E-commerce wine marketplace featuring product catalog, shopping cart, and professional design for wholesale wine distribution.",
   "Trendsetter_law": "Professional law firm website with service information, attorney profiles, and client resources.",
+  "Family_Medicine": "Family medicine clinic website with service information, appointment scheduling, and patient resources.",
 };
 
 const projectsGrid = document.getElementById("projectsGrid");
